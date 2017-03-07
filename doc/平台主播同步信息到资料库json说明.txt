@@ -1,0 +1,36 @@
+主播信息同步接口地址：http://101.201.117.124:8080/tasting_admin/rync/actor
+	actor消息格式：
+	  	name					主播真实名称名称, 非必填
+	  	nickname 				平台注册名，平台唯一    必填
+	  	room_url   				客户端下载地址		必填（变更需要通知）
+	  	fans						粉丝数	>=0  必填
+	 	claim_user_id 			主播在直播平台注册产生的id, 必填
+	   	icon  					头像图片访问地址地址   必须
+	   	introduction  			主播介绍
+	  	sex			 			1男	2女,
+	  	birthday		 		生日,    String，给什么存什么
+	  	starSign 	 			星座,	  String，给什么存什么
+	  	city 		 			城市,	  String，给什么存什么
+	  	profession	 			职业,	  String，给什么存什么
+	  	fun 		 			爱好,	  String，给什么存什么
+	  	hight	       			身高,	String，  (示例：170cm)
+	  	weight 					Strign 体重,				(62kg)
+	  	blogurl 				微博地址  Sting
+	  	op		必填	操作,update,delete,insert
+	  	
+视频信息同步接口地址：http://101.201.117.124:8080/tasting_admin/rync/video
+	video消息格式：
+	  name           视频名称  必须（没有则想办法提供一个，如**主播热播视频）
+	  claim_user_id   主播在直播平台注册产生的id, 必填
+	  identity  必须，规则是拼一个字符串：  identity_ 前缀 +  主播平台的视频id
+	  watching_url  视频下载地址	必须
+	  printscreen_path 视频截图  必须
+	  size 	 必须（单位K）
+	  play_time 必须 '播放时长（秒）
+	  op		必填	操作,delete,insert
+	  
+	  
+响应消息：
+	response：
+		result    1000  成功 ，其他为异常
+		info	反馈信息，如果出错，告知出错原因
